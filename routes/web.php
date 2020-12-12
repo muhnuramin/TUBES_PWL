@@ -16,3 +16,7 @@
 Route::get('/','MainController@home');
 Route::get('/about','MainController@about');
 Route::get('/booking','MainController@booking');
+
+Route::get('/manage','ManageController@home');
+Route::get('/managehotel','ManageController@managerooms');
+Route::get('/manageuser','ManageController@manageuser');
