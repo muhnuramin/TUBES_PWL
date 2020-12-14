@@ -10,6 +10,6 @@ class hotels extends Model
 
     protected $primaryKey = "id";
 
-    protected $fillable = ['name', 'price', 'room_left', 'picture'];
+    protected $fillable = ['tipe', 'price', 'room_left', 'picture', 'fasilitas'];
     public $timestamps = true;
 }

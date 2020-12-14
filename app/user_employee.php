@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class user_consumer extends Model
 {
-    protected $table = "users_consumer";
+    protected $table = "users_employee";
 
     protected $primaryKey = "id";
 

@@ -5,7 +5,7 @@
 <section class="main">
     <div class="row">
         <div class="col-lg-9 mx-auto">
-            <table class="table table-bordered table-striped">
+            {{-- <table class="table table-bordered table-striped">
                 <a href="manageuser/add" class="btn btn-primary">Tambah Data</a>&nbsp;&nbsp;
                 <button type="button" class="btn btn-info"><a href="/manage/cetak_pdf" target="_blank"
                         class="badge badgedanger">Cetak PDF</a></button></td><br><br>
@@ -28,15 +28,17 @@
                         <td>{{$a->email}}</td>
                         <td>{{$a->name}}</td>
                         <td>{{$a->password}}</td>
-                        <td><img width="50px" src="{{asset('storage/'.$a->profile)}}"></td>
+                        <td>{{$a->profile}}</td>
                         <td>{{$a->testimoni}}</td>
-                        <td style="text-align:center"><button type="button" class="btn btn-primary"><a href="/manageuser/edit/{{ $a->id }}" target="_blank" class="badge badgewarning">Edit</a></button></td>
-                        <td style="text-align:center"><button type="button" class="btn btn-danger"><a href="/manageuser/delete/{{ $a->id }}" target="_blank" class="badge badgedanger">Hapus</a></button></td>
+                        <td style="text-align:center"><button type="button" class="btn btn-primary"><a href="#"
+                                    target="_blank" class="badge badgewarning">Edit</a></button></td>
+                        <td style="text-align:center"><button type="button" class="btn btn-danger"><a href="#"
+                                    target="_blank" class="badge badgedanger">Hapus</a></button></td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>
-            {{$users->appends(Request::all())->links()}}
+            {{$users->appends(Request::all())->links()}} --}}
         </div>
     </div>
 </section>
