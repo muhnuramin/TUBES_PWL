@@ -3,12 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+date_default_timezone_set('Asia/Jakarta');
 class MainController extends Controller
 {
     public function home()
     {
-        return view('home');
+
+        $rooms = \App\hotels::paginate(4);
+        return view('home',[
+            'rooms' => $rooms,
+        ]);
     }
     public function about()
     {
