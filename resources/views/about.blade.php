@@ -1,2 +1,19 @@
 @extends('layouts/main')
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae corporis laboriosam assumenda eveniet numquam vel in enim, aliquam fugit similique non, odio magni ipsum nesciunt nemo facere! Dolor, ex nemo maiores pariatur, sunt provident repellendus ipsam ut totam corrupti neque et minus harum, cum quod aliquam sed reprehenderit natus tempore ipsa sequi in quam placeat accusantium. Vero explicabo sapiente illo tempora saepe eos unde similique recusandae labore maxime sit necessitatibus at quidem quod iste, voluptates esse delectus obcaecati. Dignissimos earum, atque, eaque exercitationem commodi itaque consequuntur repellat aut porro nam, veritatis temporibus illo. Voluptatem aliquid tempore, in reprehenderit repudiandae atque.</p>
+<section class="about_history_area section_gap">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 d_flex align-items-center">
+                <div class="about_content ">
+                    <h2 class="title title_color">About Us <br>Our History<br>Mission & Vision</h2>
+                    <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct
+                        standards especially in the workplace. That’s why it’s crucial that, as women, our behavior
+                        on the job is beyond reproach. inappropriate behavior is often laughed.</p>
+                    <a href="#" class="button_hover theme_btn_two">Request Custom Price</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img class="img-fluid" src="image/about_bg.jpg" alt="img">
+            </div>
+        </div>
+    </div>
+</section>

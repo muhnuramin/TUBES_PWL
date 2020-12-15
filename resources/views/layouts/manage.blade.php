@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="css/manage.css">
+    <link rel="stylesheet" href="{{ asset('css/manage.css') }}">
 </head>
 
 <body>
@@ -32,7 +32,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><img src="image/logo.png" alt=""></a>
+                <a class="navbar-brand" href="#"><img src="{{ asset('image/logo.png') }}" alt=""></a>
+                
                 <a class="navbar-brand" href="#"></a>
             </div>
         </nav>

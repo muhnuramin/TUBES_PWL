@@ -10,7 +10,7 @@ class MainController extends Controller
     {
 
         $rooms = \App\hotels::paginate(4);
-        return view('home',[
+        return view('home1',[
             'rooms' => $rooms,
         ]);
     }

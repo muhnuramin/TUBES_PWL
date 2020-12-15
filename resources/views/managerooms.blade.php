@@ -6,8 +6,8 @@
         <div class="col-lg-9 mx-auto">
             <table class="table table-bordered table-striped">
                 <a href="managehotel/add" class="btn btn-primary">Tambah Data</a>&nbsp;&nbsp;
-                <button type="button" class="btn btn-info"><a href="/manage/cetak_pdf" target="_blank"
-                        class="badge badgedanger">Cetak PDF</a></button></td>
+                <button type="button" class="btn btn-info">
+                <a href="/manage/cetak_pdf" target="_blank" class="badge badgedanger">Cetak PDF</a></button></td>
                 <thead class="thead-dark">
                 <br><br>
                     <tr>
@@ -28,8 +28,8 @@
                         <td>{{$a->fasilitas}}</td>
                         <td><img width="50px" src="{{asset('storage/'.$a->picture)}}"></td>
 
-                        <td style="text-align:center"><button type="button" class="btn btn-primary"><a href="/managehotel/edit/{{ $a->id }}" target="_blank" class="badge badgewarning">Edit</a></button></td>
-                        <td style="text-align:center"><button type="button" class="btn btn-danger"><a href="/managehotel/delete/{{ $a->id }}" target="_blank" class="badge badgedanger">Hapus</a></button></td>
+                        <td style="text-align:center"><button type="button" class="btn btn-primary"><a href="/managehotel/edit/{{ $a->id }}"  class="badge badgewarning">Edit</a></button></td>
+                        <td style="text-align:center"><button type="button" class="btn btn-danger"><a href="/managehotel/delete/{{ $a->id }}"  class="badge badgedanger">Hapus</a></button></td>
                     </tr>
                     @endforeach
                 </tbody>

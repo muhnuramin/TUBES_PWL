@@ -13,7 +13,7 @@
 
 
 
-Route::get('/home','MainController@home');
+Route::get('/','MainController@home');
 Route::get('/about','MainController@about');
 
 Route::get('/booking','MainController@booking');
@@ -33,3 +33,7 @@ Route::post('/manageuser/create','ManageController@manageusercreate');
 Route::get('/manageuser/edit/{id}','ManageController@manageuseredit');
 Route::post('/manageuser/update/{id}','ManageController@manageuserupdate');
 Route::get('/manageuser/delete/{id}','ManageController@manageuserdelete');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
