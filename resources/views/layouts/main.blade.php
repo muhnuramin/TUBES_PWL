@@ -37,18 +37,33 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                     <ul class="nav navbar-nav menu_nav ml-auto">
-                        <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/about">About US</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/booking">Booking</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
+                        <li class="nav-item {{ Route::is('home') ? 'active' : '' }}">
+                            <a class="nav-link" href="/home">Home</a>
+                        </li>
+                        <li class="nav-item {{ Route::is('about') ? 'active' : '' }}">
+                            <a class="nav-link" href="/about">About US</a></li>
+                        <li class="nav-item {{ Route::is('booking') ? 'active' : '' }}">
+                            <a class="nav-link" href="/booking">Booking</a>
+                        </li>
+                        {{-- <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="logout nav-link js-scroll-trigger" href="{{route('logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
+                        </li>
+                        <form id="logout-form" action="{{route("logout")}}" method="POST" style='display:none;'> --}}
+                            @csrf
+                        </form>
                     </ul>
                 </div>
             </nav>
         </div>
     </header>
     <!--================Header Area =================-->
-
+    @yield('Main1')
     <!--================Banner Area =================-->
     @yield('Banner')
     <!--================Banner Area =================-->

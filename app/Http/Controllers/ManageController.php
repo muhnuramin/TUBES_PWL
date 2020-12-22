@@ -3,9 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Auth;
+use Cache;
+use PDF;
 class ManageController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    public function index(){
+        if(Auth::Check()){
+        }else{
+            return redirect('login')->with('alert','login first');
+        }
+    }
     public function home()
     {
         return view('dashboard');
@@ -13,14 +25,14 @@ class ManageController extends Controller
 
     public function manageuser()
     {
-        $users = \App\user_consumer::paginate(3);
-        return view('manageusers',[
+        $users = \App\User::paginate(3);
+        return view('manageuser1',[
             'users' => $users,
         ]);
     }
 
     public function manageuseradd(){
-        $users = \App\user_consumer::All();
+        $users = \App\User::All();
         return view('manageuser.adduser',[
             'users' => $users,
         ]);
@@ -31,12 +43,11 @@ class ManageController extends Controller
             'rooms' => $rooms
         ]);
     }
-
     public function manageusercreate(Request $request){
         if($request->file('image')){
             $image_name = $request->file('image')->store('image', 'public');
         }
-        \App\user_consumer::create([
+        \App\User::create([
             'email' => $request->email,
             'name' => $request->name,
             'password' => $request->password,
@@ -59,7 +70,7 @@ class ManageController extends Controller
     }
 
     public function manageuseredit($id){
-        $users = \App\user_consumer::find($id);
+        $users = \App\User::find($id);
         return view('manageuser.edituser',[
             'users' => $users,
         ]);
@@ -71,7 +82,7 @@ class ManageController extends Controller
         ]);
     }
     public function manageuserupdate($id, Request $request){
-        $users = \App\user_consumer::find($id);
+        $users = \App\User::find($id);
         $users->email = $request->email;
         $users->name = $request->name;
         $users->password = $request->password;
@@ -101,7 +112,7 @@ class ManageController extends Controller
         return redirect('/managehotel');
     }
     public function manageuserdelete($id){
-        $users = \App\user_consumer::find($id);
+        $users = \App\User::find($id);
         $users->delete();
         return redirect('/manageuser');
     }

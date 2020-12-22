@@ -13,12 +13,14 @@
 
 
 
-Route::get('/','MainController@home');
-Route::get('/about','MainController@about');
+Route::get('/home','MainController@home')->name('home');
+Route::get('/about','MainController@about')->name('about');
 
-Route::get('/booking','MainController@booking');
+Route::get('/booking','MainController@booking')->name('booking');
+Route::get('/booking/{id}','MainController@reservasi')->name('reservasi');
 
-Route::get('/manage','ManageController@home');
+Auth::routes();
+Route::get('/manage','ManageController@home')->name('manage');
 
 Route::get('/managehotel','ManageController@managerooms');
 Route::get('/managehotel/add','ManageController@manageroomsadd');
@@ -34,6 +36,9 @@ Route::get('/manageuser/edit/{id}','ManageController@manageuseredit');
 Route::post('/manageuser/update/{id}','ManageController@manageuserupdate');
 Route::get('/manageuser/delete/{id}','ManageController@manageuserdelete');
 
-Auth::routes();
+Route::get('/pesanan','pesananController@index');
+Route::get('/', 'HomeController@index')->name('coba ');
+// Route::get('/datadiri','pesananController@datadiri');
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+
