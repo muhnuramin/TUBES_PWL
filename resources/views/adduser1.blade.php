@@ -31,9 +31,9 @@
                         <td>{{$a->profile}}</td>
                         <td>{{$a->testimoni}}</td>
                         <td style="text-align:center"><button type="button" class="btn btn-primary"><a href="#"
-                                    target="_blank" class="badge badgewarning">Edit</a></button></td>
+                                    class="badge badgewarning">Edit</a></button></td>
                         <td style="text-align:center"><button type="button" class="btn btn-danger"><a href="#"
-                                    target="_blank" class="badge badgedanger">Hapus</a></button></td>
+                                    class="badge badgedanger">Hapus</a></button></td>
                     </tr>
                     @endforeach
                 </tbody>

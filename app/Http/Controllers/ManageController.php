@@ -25,7 +25,7 @@ class ManageController extends Controller
 
     public function manageuser()
     {
-        $users = \App\User::paginate(3);
+        $users = \App\User::paginate(5);
         return view('manageuser1',[
             'users' => $users,
         ]);
@@ -53,7 +53,7 @@ class ManageController extends Controller
             'password' => $request->password,
             'profile' => $image_name,
         ]);
-        return redirect('/manageuser');
+        return redirect('/manageuser')->with('status','data berhasil ditambahkan');
     }
     public function manageroomscreate(Request $request){
         if($request->file('image')){
@@ -66,20 +66,20 @@ class ManageController extends Controller
             'fasilitas' => $request->fasilitas,
             'picture' => $image_name,
         ]);
-        return redirect('/managehotel');
+        return redirect('/managehotel')->with('status','data berhasil ditambahkan');
     }
 
     public function manageuseredit($id){
         $users = \App\User::find($id);
         return view('manageuser.edituser',[
             'users' => $users,
-        ]);
+        ])->with('status','data berhasil diedit');
     }
     public function manageroomsedit($id){
         $rooms = \App\hotels::find($id);
         return view('managehotel.editroom',[
             'rooms' => $rooms,
-        ]);
+        ])->with('status','data berhasil diedit');
     }
     public function manageuserupdate($id, Request $request){
         $users = \App\User::find($id);
@@ -93,7 +93,7 @@ class ManageController extends Controller
         $image_name = $request->file('image')->store('images', 'public');
         $users->profile = $image_name;
         $users->save();
-        return redirect('/manageuser');
+        return redirect('/manageuser')->with('status','data berhasil diedit');
     }
 
     public function manageroomsupdate($id, Request $request){
@@ -109,17 +109,17 @@ class ManageController extends Controller
         $image_name = $request->file('image')->store('images', 'public');
         $rooms->picture = $image_name;
         $rooms->save();
-        return redirect('/managehotel');
+        return redirect('/managehotel')->with('status','data berhasil diedit');
     }
     public function manageuserdelete($id){
         $users = \App\User::find($id);
         $users->delete();
-        return redirect('/manageuser');
+        return redirect('/manageuser')->with('status','data berhasil dihapus');
     }
     public function manageroomsdelete($id){
         $rooms = \App\hotels::find($id);
         $rooms->delete();
-        return redirect('/managehotel');
+        return redirect('/managehotel')->with('status','data berhasil dihapus');
     }
     public function managerooms()
     {

@@ -1,3 +1,8 @@
+.login {
+    margin-left: 65vmax;
+}
+
+
 body {
 
     font-family: 'Quicksand', sans-serif;
@@ -67,6 +72,12 @@ ul li a .fa-angle-down {
     width: 76vmax;
     margin: 30px;
     box-shadow: 1px 1px rgb(218, 210, 210);
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+.jadwal {
+    height: 8.9vmax;
 }
 
 /*apabila lebar min 768px*/

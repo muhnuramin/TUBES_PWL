@@ -32,39 +32,26 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/home"><img src="{{ asset('image/logo.png') }}" alt=""></a>
-
-                <a class="navbar-brand" href="#"></a>
+                <a class="navbar-brand " href="/home"><img src="{{ asset('image/logo.png') }}" alt=""></a>
+                
+                <a class="navbar-brand login" href="#"><p>{{ Auth::user()->name }}</p></a>
+                
             </div>
         </nav>
+        
         <aside class="sidebar">
             <menu>
                 <ul class="menu-content">
                     <li><a href="/manage"><i class="fa fa-home"></i> Home</a></li>
-                    <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }} <span class="caret"></span>
-                        </a>
-
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                style="display: none;">
-                                @csrf
-                            </form>
-                        </div>
+                    <li><a href="/manageuser"><i class="fa fa-user-plus"></i> <span>Manage User (Employee)</span></a>
                     </li>
-                    <li><a href="/manageuser"><i class="fa fa-user-plus"></i> <span>Manage User (Employee)</span></a></li>
                     <li><a href="/managehotel"><i class="fa fa-hotel"></i> <span>Manage Hotel</span></a></li>
                     <li><a href="/pesanan"><i class="fa fa-shopping-basket"></i> <span>History Pesanan</span></a></li>
                     {{-- <li><a href="#"><i class="fa fa-door-open"></i> <span>Pembelian</span></a></li> --}}
+                    
                     <li class="nav-item">
-                        <a class="logout nav-link js-scroll-trigger" href="{{route('logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
+                        <a class="logout nav-link js-scroll-trigger" href="{{route('logout')}}"
+                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
                     </li>
                     <form id="logout-form" action="{{route("logout")}}" method="POST" style='display:none;'>
                         @csrf
@@ -78,4 +65,5 @@
         </section>
     </div>
 </body>
+
 </html>
