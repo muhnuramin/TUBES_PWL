@@ -8,7 +8,7 @@
         <div class="container">
             <div class="banner_content text-center">
                 <h6>Away from monotonous life</h6>
-                <h2>Relax Your Mind</h2>
+                <h2 class="ml2">Relax Your Mind</h2>
                 <p>we shall never deny a guest even the most ridiculous request</p>
                 <a href="#" class="btn theme_btn button_hover">Get Started</a>
             </div>
@@ -35,7 +35,7 @@
                 <div class="accomodation_item text-center">
                     <div class="hotel_img">
                         <img src="{{asset('storage/'.$room->picture)}}" alt="">
-                        <a href="#" class="btn theme_btn button_hover">Book Now</a>
+                        <a href="/booking" class="btn theme_btn button_hover">Book Now</a>
                     </div>
                     <a href="#">
                         <h4 class="sec_h4">{{$room->tipe}}</h4>
@@ -44,44 +44,7 @@
                 </div>
             </div>
             @endforeach
-            {{-- <div class="col-lg-3 col-sm-6">
-                <div class="accomodation_item text-center">
-                    <div class="hotel_img">
-                        <img src="image/room2.jpg" alt="">
-                        <a href="#" class="btn theme_btn button_hover">Book Now</a>
-                    </div>
-                    <a href="#">
-                        <h4 class="sec_h4">Single Deluxe Room</h4>
-                    </a>
-                    <h5>Rp.800.000<small>/night</small></h5>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="accomodation_item text-center">
-                    <div class="hotel_img">
-                        <img src="image/room3.jpg" alt="">
-                        <a href="#" class="btn theme_btn button_hover">Book Now</a>
-                    </div>
-                    <a href="#">
-                        <h4 class="sec_h4">Honeymoon Suit</h4>
-                    </a>
-                    <h5>Rp.750.000<small>/night</small></h5>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="accomodation_item text-center">
-                    <div class="hotel_img">
-                        <img src="image/room4.jpg" alt="">
-                        <a href="#" class="btn theme_btn button_hover">Book Now</a>
-                    </div>
-                    <a href="#">
-                        <h4 class="sec_h4">Economy Double</h4>
-                    </a>
-                    <h5>Rp.500.000<small>/night</small></h5>
-                </div>
-            </div> --}}
         </div>
-        {{$rooms->appends(Request::all())->links()}}
     </div>
 </section>
 @endsection
@@ -172,7 +135,7 @@
         <div class="testimonial_slider owl-carousel">
 
             <div class="media testimonial_item">
-                <img class="rounded-circle" src="image/testtimonial-1.jpg" alt="">
+                <img class="rounded-circle" src="{{asset('image/kosong.jpg')}}" alt="">
                 <div class="media-body">
                     <p>As conscious traveling Paupers we must always be concerned about our dear Mother Earth. If
                         you think about it, you travel across her face, and She is the </p>
@@ -180,51 +143,12 @@
                         <h4 class="sec_h4">Fanny Spencer</h4>
                     </a>
                     <div class="star">
+                    @for($i=1;$i<10;$i++)
                         <a href="#"><i class="fa fa-star"></i></a>
-                        <a href="#"><i class="fa fa-star"></i></a>
-                        <a href="#"><i class="fa fa-star"></i></a>
-                        <a href="#"><i class="fa fa-star"></i></a>
-                        <a href="#"><i class="fa fa-star-half-o"></i></a>
+                    @endfor
                     </div>
                 </div>
             </div>
-
-            {{-- <div class="media testimonial_item">
-                <img class="rounded-circle" src="image/testtimonial-1.jpg" alt="">
-                <div class="media-body">
-                    <p>As conscious traveling Paupers we must always be concerned about our dear Mother Earth. If
-                        you think about it, you travel across her face, and She is the </p>
-                    <a href="#">
-                        <h4 class="sec_h4">Fanny Spencer</h4>
-                    </a>
-                    <div class="star">
-                        <a href="#"><i class="fa fa-star"></i></a>
-                        <a href="#"><i class="fa fa-star"></i></a>
-                        <a href="#"><i class="fa fa-star"></i></a>
-                        <a href="#"><i class="fa fa-star"></i></a>
-                        <a href="#"><i class="fa fa-star-half-o"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="media testimonial_item">
-                <img class="rounded-circle" src="image/testtimonial-1.jpg" alt="">
-                <div class="media-body">
-                    <p>As conscious traveling Paupers we must always be concerned about our dear Mother Earth. If
-                        you think about it, you travel across her face, and She is the </p>
-                    <a href="#">
-                        <h4 class="sec_h4">Fanny Spencer</h4>
-                    </a>
-                    <div class="star">
-                        <a href="#"><i class="fa fa-star"></i></a>
-                        <a href="#"><i class="fa fa-star"></i></a>
-                        <a href="#"><i class="fa fa-star"></i></a>
-                        <a href="#"><i class="fa fa-star"></i></a>
-                        <a href="#"><i class="fa fa-star-half-o"></i></a>
-                    </div>
-                </div>
-            </div>
-             --}}
         </div>
     </div>
 </section>

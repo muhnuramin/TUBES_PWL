@@ -56,6 +56,16 @@ Table of Content:
     padding: 0px;
 }
 
+.ml2 {
+    font-weight: 900;
+    font-size: 3.5em;
+}
+
+.ml2 .letter {
+    display: inline-block;
+    line-height: 1em;
+}
+
 a {
     text-decoration: none;
     -webkit-transition: all 0.3s ease-in-out;
@@ -785,6 +795,8 @@ button:focus {
     -webkit-transition: all 0.4s linear;
     -o-transition: all 0.4s linear;
     transition: all 0.4s linear;
+    height: 270px;
+    width: 263px;
 }
 
 .accomodation_item .hotel_img .theme_btn {
