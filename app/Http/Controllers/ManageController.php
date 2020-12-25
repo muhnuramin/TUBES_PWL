@@ -128,4 +128,16 @@ class ManageController extends Controller
             'rooms' => $rooms,
         ]);
     }
+    public function cetak_user()
+    {
+        $users = \App\User::all();
+        $pdf = PDF::loadview('pdfuser',['users' => $users]);
+        return $pdf->stream();
+    }
+    public function cetak_rooms()
+    {
+        $rooms = \App\hotels::all();
+        $pdf = PDF::loadview('pdfrooms',['rooms' => $rooms]);
+        return $pdf->stream();
+    }
 }

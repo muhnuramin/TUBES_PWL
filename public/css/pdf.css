@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.garis {
+    border-bottom: 4px solid grey;
+    width: 100%;
+
+}
+
+header img {
+    margin-top: -10px;
+}
+
+body {
+    background-color: white;
+}
+
+table,
+th,
+td {
+    border: 1px solid grey;
+    border-collapse: collapse;
+}
+
+table {
+    width: 100%;
+}
+
+th {
+    background-color: rgb(194, 191, 191);
+}
+
+.ttd {
+    float: right;
+    margin-right: 5%;
+}

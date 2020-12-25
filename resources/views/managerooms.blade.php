@@ -7,7 +7,7 @@
                 <table class="table table-bordered table-striped">
                     <a href="managehotel/add" class="btn btn-primary">Tambah Data</a>&nbsp;&nbsp;
                     <button type="button" class="btn btn-info">
-                        <a href="/manage/cetak_pdf" target="_blank" class="badge badgedanger">Cetak PDF</a></button></td><br><br>
+                        <a href="/manage/cetak_rooms" target="_blank" class="badge badgedanger">Cetak PDF</a></button></td><br><br>
                     @if(session('status'))
                     <div class="alert alert-success">
                     {{session('status')}}
@@ -30,7 +30,7 @@
                     <tbody>
                         @foreach($rooms as $a)
                         <tr>
-                            <td style="text-align:center">{{$a->id}}</td>
+                            <td style="text-align:center">{{$loop->iteration}}</td>
                             <td>{{$a->tipe}}</td>
                             <td>{{$a->room_left}}</td>
                             <td>{{$a->fasilitas}}</td>

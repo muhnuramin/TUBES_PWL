@@ -41,5 +41,6 @@ Route::get('/pesanan','pesananController@index');
 Route::get('/', 'HomeController@index')->name('coba ');
 // Route::get('/datadiri','pesananController@datadiri');
 
-
+Route::get('/manage/cetak_user','ManageController@cetak_user');
+Route::get('/manage/cetak_rooms','ManageController@cetak_rooms');
 

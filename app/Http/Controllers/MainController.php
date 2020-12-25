@@ -38,10 +38,10 @@ class MainController extends Controller
     }
 
     public function reservasi($id){
-         $rooms = \App\hotels::where('id','=',$id)->find($id);
-         Session::put('room',$rooms);
+        $rooms = \App\hotels::where('id','=',$id)->find($id);
+        Session::put('room',$rooms);
         return view('datadiri',[
-             'rooms' => $rooms,
+            'rooms' => $rooms,
         ]);
     }
 }

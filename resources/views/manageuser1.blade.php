@@ -7,7 +7,7 @@
             <div class="col-lg-9 mx-auto">
                 <table class="table table-bordered table-striped">
                     <a href="manageuser/add" class="btn btn-primary">Tambah Data</a>&nbsp;&nbsp;
-                    <button type="button" class="btn btn-info"><a href="/manage/cetak_pdf"
+                    <button type="button" class="btn btn-info"><a href="/manage/cetak_user"
                             class="badge badgedanger">Cetak PDF</a></button></td><br><br>
                     @if(session('status'))
                     <div class="alert alert-success">
