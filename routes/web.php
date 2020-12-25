@@ -15,6 +15,7 @@
 
 Route::get('/home','MainController@home')->name('home');
 Route::get('/about','MainController@about')->name('about');
+Route::get('/testimoni','MainController@testimoni');
 
 Route::get('/booking','MainController@booking')->name('booking');
 Route::get('/booking/{id}','MainController@reservasi')->name('reservasi');

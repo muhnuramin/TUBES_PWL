@@ -21,6 +21,10 @@ class MainController extends Controller
     {
         return view('about');
     }
+    public function testimoni()
+    {
+        return view('testimoni');
+    }
     public function booking()
     {
         $rooms = \App\hotels::paginate(4);
