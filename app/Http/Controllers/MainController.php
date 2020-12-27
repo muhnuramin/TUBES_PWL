@@ -39,21 +39,39 @@ class MainController extends Controller
 
     public function reservasi($id){
         $rooms = \App\hotels::where('id','=',$id)->find($id);
-        Session::put('room',$rooms);
+        Session::put('room',$id);
+        $room_type = $id;
         return view('datadiri',[
             'rooms' => $rooms,
+            'room_type' =>$room_type,
         ]);
     }
     public function bookingcreate(Request $request){
 
-        \App\user_costumer::create([
-            'nama' => $request->nama,
-            'alamat' => $request->alamat,
-            'phone' => $request->phone,
-            'email' => $request->email,
-            'jml_kamar' => $request->jml_kamar,
-        ]);
-        return redirect('home')->with('status','data berhasil ditambahkan');
+        $room = \App\hotels::where('tipe','=',$request->get('type_room_hidden'))
+                            ->first();
+
+        // dd($room->id);
+        // die();
+
+        $new_data = new \App\user_costumer();
+        $email_exist = \App\user_costumer::where('email','=',$request->get('email'))->first();
+        $phone_exist = \App\user_costumer::where('phone','=',$request->get('phone'))->first();
+        $new_data->nama = $request->get('nama');
+        $new_data->alamat = $request->get('alamat');
+        $new_data->phone = $request->get('phone');
+        $new_data->email = $request->get('email');
+        $new_data->jml_kamar = $request->get('jml_kamar');
+        $new_data->type_room = $room->id;
+
+        if (($email_exist) || ($phone_exist)){
+            return redirect()->route('home')->with(['error'=>'Email / No Telepon sudah digunakan, mohon gunakan email lain.']);
+        } else {
+            $new_data->save();
+            // return redirect('home')->with('status','Data berhasil ditambahkan');
+            return redirect('testimoni');
+        }
+
     }
 
 }

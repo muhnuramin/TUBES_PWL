@@ -18,26 +18,36 @@
                         <th style="text-align:center">Alamat</th>
                         <th style="text-align:center">Jumlah Kamar</th>
                         <th style="text-align:center">Testimoni</th>
-                        {{-- <th style="text-align:center" colspan="2">Fitur</th> --}}
+                        <th style="text-align:center" colspan="2">Fitur</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($userscust as $a)
+                    @php
+                        $i=(($userscust->currentPage()-1)*$userscust->perPage()+1)-1;
+                    @endphp
+                    @foreach($userscust as $userscusts)
                     <tr>
-                        <td style="text-align:center">{{$a->id}}</td>
-                        <td>{{$a->nama}}</td>
-                        <td>{{$a->email}}</td>
-                        <td>{{$a->phone}}</td>
-                        <td>{{$a->alamat}}</td>
-                        <td>{{$a->jml_kamar}}</td>
-                        <td>{{$a->testimoni}}</td>
-                        <td style="text-align:center"><button type="button" class="btn btn-primary"><a href="/managehotel/edit/{{ $a->id }}"  class="badge badgewarning">Edit</a></button></td>
-                        <td style="text-align:center"><button type="button" class="btn btn-danger"><a href="/managehotel/delete/{{ $a->id }}"  class="badge badgedanger">Hapus</a></button></td>
+                        <td style="text-align:center">{{$userscusts->id}}</td>
+                        <td>{{$userscusts->nama}}</td>
+                        <td>{{$userscusts->email}}</td>
+                        <td>{{$userscusts->phone}}</td>
+                        <td>{{$userscusts->alamat}}</td>
+                        <td>{{$userscusts->jml_kamar}}</td>
+                        <td>{{$userscusts->type_room}}</td>
+                        <td style="text-align:center"><button type="button" class="btn btn-primary"><a href="/managehotel/edit/{{ $userscusts->id }}"  class="badge badgewarning">Edit</a></button></td>
+                        <td style="text-align:center"><button type="button" class="btn btn-danger"><a href="/managehotel/delete/{{ $userscusts->id }}"  class="badge badgedanger">Hapus</a></button></td>
                     </tr>
                     @endforeach
                 </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan=10>
+                        {{$userscust->appends(Request::all())->links()}}
+                        </td>
+                    </tr>
+                </tfoot>
             </table>
-            {{$rooms->appends(Request::all())->links()}}
+
         </div>
     </div>
 </section>

@@ -25,6 +25,25 @@
 <section class="accomodation_area section_gap">
     <div class="container">
         <div class="section_title text-center">
+            @if (session('status'))
+                <div class="alert alert-success">
+                    <b><font size="4">{{session('status')}}</font></b>
+                </div>
+            @endif
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+             @if ($message = Session::get('error'))
+                <div class="alert alert-danger alert-block">
+                    <strong><font size="4">{{ $message }}</font></strong>
+                </div>
+            @endif
             <h2 class="title_color">Hotel Accomodation</h2>
             <p>We all live in an age that belongs to the young at heart. Life that is becoming extremely fast, </p>
         </div>

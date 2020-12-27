@@ -140,4 +140,10 @@ class ManageController extends Controller
         $pdf = PDF::loadview('pdfrooms',['rooms' => $rooms]);
         return $pdf->stream();
     }
+    public function cetak_pesanan()
+    {
+        $rooms = \App\user_costumer::all();
+        $pdf = PDF::loadview('pdfrooms',['usercust' => $usercust]);
+        return $pdf->stream();
+    }
 }
