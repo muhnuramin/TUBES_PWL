@@ -19,6 +19,7 @@ Route::get('/testimoni','MainController@testimoni');
 
 Route::get('/booking','MainController@booking')->name('booking');
 Route::get('/booking/{id}','MainController@reservasi')->name('reservasi');
+Route::post('/booking/create','MainController@bookingcreate');
 
 Auth::routes();
 Route::get('/manage','ManageController@home')->name('manage');

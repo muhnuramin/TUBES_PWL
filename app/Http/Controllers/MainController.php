@@ -44,4 +44,16 @@ class MainController extends Controller
             'rooms' => $rooms,
         ]);
     }
+    public function bookingcreate(Request $request){
+
+        \App\user_costumer::create([
+            'nama' => $request->nama,
+            'alamat' => $request->alamat,
+            'phone' => $request->phone,
+            'email' => $request->email,
+            'jml_kamar' => $request->jml_kamar,
+        ]);
+        return redirect('home')->with('status','data berhasil ditambahkan');
+    }
+
 }

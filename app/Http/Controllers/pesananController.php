@@ -8,10 +8,9 @@ class pesananController extends Controller
 {
     public function index()
     {
-        return view('pesanan');
-    }
-    public function datadiri()
-    {
-        return view('datadiri');
+        $userscust = \App\user_customer::paginate(5);
+        return view('pesanan',[
+            'userscust' => $userscust,
+        ]);
     }
 }

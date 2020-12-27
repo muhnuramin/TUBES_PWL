@@ -22,21 +22,22 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {{-- @foreach($rooms as $a)
+                    @foreach($userscust as $a)
                     <tr>
                         <td style="text-align:center">{{$a->id}}</td>
-                        <td>{{$a->tipe}}</td>
-                        <td>{{$a->room_left}}</td>
-                        <td>{{$a->fasilitas}}</td>
-                        <td><img width="50px" src="{{asset('storage/'.$a->picture)}}"></td>
-
+                        <td>{{$a->nama}}</td>
+                        <td>{{$a->email}}</td>
+                        <td>{{$a->phone}}</td>
+                        <td>{{$a->alamat}}</td>
+                        <td>{{$a->jml_kamar}}</td>
+                        <td>{{$a->testimoni}}</td>
                         <td style="text-align:center"><button type="button" class="btn btn-primary"><a href="/managehotel/edit/{{ $a->id }}"  class="badge badgewarning">Edit</a></button></td>
                         <td style="text-align:center"><button type="button" class="btn btn-danger"><a href="/managehotel/delete/{{ $a->id }}"  class="badge badgedanger">Hapus</a></button></td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>
-            {{$rooms->appends(Request::all())->links()}} --}}
+            {{$rooms->appends(Request::all())->links()}}
         </div>
     </div>
 </section>
