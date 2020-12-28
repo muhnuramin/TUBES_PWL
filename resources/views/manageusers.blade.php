@@ -27,7 +27,7 @@
                     <tbody>
                         @foreach($users as $a)
                         <tr>
-                            <td style="text-align:center">{{$a->id}}</td>
+                            <td style="text-align:center">{{$loop->iteration}}</td>
                             <td>{{$a->email}}</td>
                             <td>{{$a->name}}</td>
                             <td><img width="50px" src="{{asset('storage/'.$a->profile)}}"></td>

@@ -47,6 +47,7 @@
                     </li>
                     <li><a href="/managehotel"><i class="fa fa-hotel"></i> <span>Manage Hotel</span></a></li>
                     <li><a href="/pesanan"><i class="fa fa-shopping-basket"></i> <span>History Pesanan</span></a></li>
+                    <li><a href="/manage/testimoni"><i class="fa fa-comments" aria-hidden="true"></i> <span>testimoni</span></a></li>
                     {{-- <li><a href="#"><i class="fa fa-door-open"></i> <span>Pembelian</span></a></li> --}}
                     
                     <li class="nav-item">

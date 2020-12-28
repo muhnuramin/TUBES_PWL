@@ -177,41 +177,4 @@
         </div>
     </div>
 </div>
-<!-- room 4 -->
-<div class="modal fade" id="room4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Room 4</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <!-- Modal -->
-            </div>
-            <div class="modal-body">
-                <ul class="list-group">
-                    <li class="list-group-item">Description :
-                        <ol>
-                            <li>Tipe Kamar :</li>
-                            <li>Ukuran :</li>
-                            <li>Harga :</li>
-                        </ol>
-                    </li>
-                    <li class="list-group-item">Facilities :
-                        <ul>
-                            <li>wifi</li>
-                            <li>Living Room</li>
-                            <li>Bad Room</li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-warning"><a class="tombol" href="/datadiri">Book Now</a></button>
-            </div>
-        </div>
-    </div>
-</div> --}}
-
 <br><br><br><br>

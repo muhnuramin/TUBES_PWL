@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use Cache;
 use PDF;
+use Illuminate\Support\Facades\Hash;
 class ManageController extends Controller
 {
     public function __construct()
@@ -50,7 +51,7 @@ class ManageController extends Controller
         \App\User::create([
             'email' => $request->email,
             'name' => $request->name,
-            'password' => $request->password,
+            'password' =>Hash::make($request->password),
             'profile' => $image_name,
         ]);
         return redirect('/manageuser')->with('status','data berhasil ditambahkan');
@@ -146,4 +147,26 @@ class ManageController extends Controller
         $pdf = PDF::loadview('pdfrooms',['usercust' => $usercust]);
         return $pdf->stream();
     }
+
+    public function managetesti()
+    {
+        $testimonials = \App\testimonial::paginate(5);
+        return view('managetestimoni',[
+            'testimonials' => $testimonials,
+        ]);
+    }
+    
+    public function managetestidelete($id){
+        $testimonials = \App\testimonial::find($id);
+        $testimonials->delete();
+        return redirect('/manage/testimoni')->with('status','data spam akan dihapus');
+    }
+
+    public function testicreate(Request $request)
+    {
+        \App\testimonial::create([
+            'Nama' => $request->Nama,
+            'Nilai' => $request->Nilai,
+            'testi' => $request->testi
+            ]);return redirect('/home');}
 }

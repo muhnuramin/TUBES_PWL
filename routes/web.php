@@ -38,6 +38,10 @@ Route::get('/manageuser/edit/{id}','ManageController@manageuseredit');
 Route::post('/manageuser/update/{id}','ManageController@manageuserupdate');
 Route::get('/manageuser/delete/{id}','ManageController@manageuserdelete');
 
+Route::get('/manage/testimoni','ManageController@managetesti');
+Route::get('/managetesti/delete/{id}','ManageController@managetestidelete');
+Route::post('/testimoni/create','ManageController@testicreate');
+
 Route::get('/pesanan','pesananController@index');
 Route::get('/', 'HomeController@index')->name('coba ');
 // Route::get('/datadiri','pesananController@datadiri');

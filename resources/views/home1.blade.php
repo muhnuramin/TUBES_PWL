@@ -10,7 +10,7 @@
                 <h6>Away from monotonous life</h6>
                 <h2 class="ml2">Relax Your Mind</h2>
                 <p>we shall never deny a guest even the most ridiculous request</p>
-                <a href="#" class="btn theme_btn button_hover">Get Started</a>
+                <a href="/booking" class="btn theme_btn button_hover">Get Started</a>
             </div>
         </div>
     </div>
@@ -39,7 +39,7 @@
                     </ul>
                 </div>
             @endif
-             @if ($message = Session::get('error'))
+            @if ($message = Session::get('error'))
                 <div class="alert alert-danger alert-block">
                     <strong><font size="4">{{ $message }}</font></strong>
                 </div>
@@ -151,24 +151,28 @@
             <p>The French Revolution constituted for the conscience of the dominant aristocratic class a fall from
             </p>
         </div>
-        <div class="testimonial_slider owl-carousel">
 
+        
+        <div class="testimonial_slider owl-carousel">
+        @foreach($testimonials as $t)
             <div class="media testimonial_item">
                 <img class="rounded-circle" src="{{asset('image/kosong.jpg')}}" alt="">
                 <div class="media-body">
-                    <p>As conscious traveling Paupers we must always be concerned about our dear Mother Earth. If
-                        you think about it, you travel across her face, and She is the </p>
+                    <p>{{$t->testi}}</p>
                     <a href="#">
-                        <h4 class="sec_h4">Fanny Spencer</h4>
+                        <h4 class="sec_h4">{{$t->Nama}}</h4>
                     </a>
+                    <div class="d-none">{{$n=$t->Nilai}}</div>
                     <div class="star">
-                    @for($i=1;$i<10;$i++)
+                    @for($i=0;$i<$n;$i++)
                         <a href="#"><i class="fa fa-star"></i></a>
                     @endfor
                     </div>
                 </div>
             </div>
+            @endforeach
         </div>
+        
     </div>
 </section>
 @endsection

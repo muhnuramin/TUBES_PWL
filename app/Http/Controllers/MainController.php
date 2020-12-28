@@ -9,13 +9,18 @@ class MainController extends Controller
 {
     public function home()
     {
-        $rooms = Cache::remember('rooms', 60, function(){
-            return \App\hotels::all();
-        });
+        // $rooms = Cache::remember('rooms', 60, function(){
+        //     return \App\hotels::all();
+        // });
         $rooms = \App\hotels::paginate(4);
+        $testimonials = \App\testimonial::all();
+        
         return view('home1',[
             'rooms' => $rooms,
+            'testimonials' => $testimonials,
         ]);
+
+        
     }
     public function about()
     {
