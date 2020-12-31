@@ -45,7 +45,7 @@
                         <!-- Authentication Links -->
                         @guest
                         <li class="nav-item">
-                            <a class="nav-link" href="/">{{ __('HOME') }}</a>
+                            <a class="nav-link" href="/home">{{ __('HOME') }}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/about">{{ __('ABOUT US') }}</a>
@@ -53,9 +53,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/booking">{{ __('BOOKING') }}</a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">{{ __('LOGIN') }}</a>
-                        </li>
+                        </li> --}}
                         @if (Route::has('register'))
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('register') }}">{{ __('REGISTER') }}</a>

@@ -12,7 +12,7 @@
         <center>
         <br><br>
         <img src="{{public_path('image/favicon.png')}}">&nbsp;
-        <h2>Laporan Data Hotel</h2>
+        <h2>@yield('judul')</h2>
         </center>
         <link rel="stylesheet" href="{{public_path('css/pdf.css')}}">
     </header>
@@ -27,6 +27,7 @@
         <div class="h3"><b>Admin</b></div>
         <br><br><br>
         <p>{{ Auth::user()->name }}</p>
+
     </div>
 </body>
 

@@ -69,7 +69,14 @@ class ManageController extends Controller
         ]);
         return redirect('/managehotel')->with('status','data berhasil ditambahkan');
     }
-
+    public function testicreate(Request $request){
+        \App\testimonial::create([
+            'Nama' => $request->Nama,
+            'Nilai' => $request->Nilai,
+            'testi' => $request->testi
+            ]);
+            return redirect('/home');
+    }
     public function manageuseredit($id){
         $users = \App\User::find($id);
         return view('manageuser.edituser',[
@@ -131,20 +138,35 @@ class ManageController extends Controller
     }
     public function cetak_user()
     {
+        $page ="Laporan Data User";
         $users = \App\User::all();
-        $pdf = PDF::loadview('pdfuser',['users' => $users]);
+        $pdf = PDF::loadview('pdfuser',
+        [
+            'users' => $users,
+            'page' => $page,
+        ]);
         return $pdf->stream();
     }
     public function cetak_rooms()
     {
+        $page ="Laporan Data Kamar";
         $rooms = \App\hotels::all();
-        $pdf = PDF::loadview('pdfrooms',['rooms' => $rooms]);
+        $pdf = PDF::loadview('pdfrooms',
+        [
+            'rooms' => $rooms,
+            'page' => $page,
+        ]);
         return $pdf->stream();
     }
     public function cetak_pesanan()
     {
-        $rooms = \App\user_costumer::all();
-        $pdf = PDF::loadview('pdfrooms',['usercust' => $usercust]);
+        $page ="Laporan Data Pesanan";
+        $users_costumer = \App\user_costumer::all();
+        $pdf = PDF::loadview('pdfpesanan',
+        [
+            'users_costumer' => $users_costumer,
+            'page' => $page,
+        ]);
         return $pdf->stream();
     }
 
@@ -155,18 +177,12 @@ class ManageController extends Controller
             'testimonials' => $testimonials,
         ]);
     }
-    
+
     public function managetestidelete($id){
         $testimonials = \App\testimonial::find($id);
         $testimonials->delete();
         return redirect('/manage/testimoni')->with('status','data spam akan dihapus');
     }
 
-    public function testicreate(Request $request)
-    {
-        \App\testimonial::create([
-            'Nama' => $request->Nama,
-            'Nilai' => $request->Nilai,
-            'testi' => $request->testi
-            ]);return redirect('/home');}
+
 }

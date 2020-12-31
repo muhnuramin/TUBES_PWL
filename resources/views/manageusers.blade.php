@@ -32,7 +32,7 @@
                             <td>{{$a->name}}</td>
                             <td><img width="50px" src="{{asset('storage/'.$a->profile)}}"></td>
                             <td style="text-align:center"><button type="button" class="btn btn-primary">
-                                    <a href="/manageuser/edit/{{ $a->id }}" 
+                                    <a href="/manageuser/edit/{{ $a->id }}"
                                         class="badge badgewarning">Edit</a>
                                 </button></td>
                             <td style="text-align:center"><button type="button" class="btn btn-danger">

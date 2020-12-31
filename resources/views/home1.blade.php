@@ -64,6 +64,7 @@
             </div>
             @endforeach
         </div>
+        {{$rooms->appends(Request::all())->links()}}
     </div>
 </section>
 @endsection
@@ -152,7 +153,7 @@
             </p>
         </div>
 
-        
+
         <div class="testimonial_slider owl-carousel">
         @foreach($testimonials as $t)
             <div class="media testimonial_item">
@@ -172,7 +173,7 @@
             </div>
             @endforeach
         </div>
-        
+
     </div>
 </section>
 @endsection

@@ -3,7 +3,7 @@
 <div class="container testimonials mb-5"><br><br>
     <h3>Beri Kami Nilai&#128522;</h3>
     <form action="/testimoni/create" method="post" enctype="multipart/form-data">
-        @csrf
+        {{ csrf_field() }}
         <div class="form-group">
             <label for="Nama">Nama</label>
             <input type="text" class="form-control" id="Nama" name="Nama" required="required" placeholder="Enter name">
@@ -25,7 +25,7 @@
             <textarea class="form-control" cols="5" rows="2" required="required" name="testi"
                 placeholder="testimoni"></textarea>
         </div>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
             Send &nbsp;<i class="fa fa-paper-plane"
                 aria-hidden="true"></i>
         </button>
@@ -45,7 +45,7 @@
                         <p><b>Terima Kasih</b></p>
                     </div>
                     <div class="footer">
-                        <button type="submit" name="add" class="btn btn-primary mb-1">OK
+                        <button type="submit" name="add" class="btn btn-primary mb-1"><a href="/home">OK</a>
                         </button><br>
                     </div>
                 </div>

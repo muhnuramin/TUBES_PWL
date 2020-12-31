@@ -1,4 +1,6 @@
 @extends('layouts/pdf')
+@section('judul', $page)
+
 @section('data')
 
 <table>
@@ -11,11 +13,11 @@
     </tr>
     @foreach($users as $u)
     <tr>
-        <td>{{$loop->iteration}}</td>
-        <td>{{$u->name}}</td>
-        <td>{{$u->email}}</td>
-        <td><img width="100px" height="100px" src="{{public_path('storage/'.$u->profile)}}"></td>
-        <td>{{$u->created_at}}</td>
+        <td align="center">{{$loop->iteration}}</td>
+        <td align="center">{{$u->name}}</td>
+        <td align="center">{{$u->email}}</td>
+        <td align="center"><img width="100px" height="100px" src="{{public_path('storage/'.$u->profile)}}"></td>
+        <td align="center">{{$u->created_at}}</td>
     </tr>
     @endforeach
 </table>
