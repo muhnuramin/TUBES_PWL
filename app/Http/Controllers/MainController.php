@@ -67,6 +67,7 @@ class MainController extends Controller
         $new_data->phone = $request->get('phone');
         $new_data->email = $request->get('email');
         $new_data->jml_kamar = $request->get('jml_kamar');
+        $new_data->checkin = $request->get('checkin');
         $new_data->type_room = $room->id;
 
         if (($email_exist) || ($phone_exist)){
