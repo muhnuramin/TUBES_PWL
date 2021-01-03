@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="{{asset('vendors/bootstrap-datepicker/bootstrap-datetimepicker.min.css')}}">
     <link rel="stylesheet" href="{{asset('vendors/nice-select/css/nice-select.css')}}">
     <link rel="stylesheet" href="{{asset('vendors/owl-carousel/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="./datepicker/css/boostrap.css" type="text/css">
+    <link rel="stylesheet" href="./datepicker/css/boostrap-datepicker3.css" type="text/css">
     <!-- main css -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/responsive.css')}}">
@@ -181,6 +183,7 @@
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="js/jquery-3.2.1.min.js"></script>
+
     <script src="js/popper.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
@@ -193,6 +196,13 @@
     <script src="vendors/lightbox/simpleLightbox.min.js"></script>
     <script src="{{asset('js/custom.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="./datepicker/js/boostrap.js"></script>
+    <script src="./datepicker/js/boostrap-datepicker.js"></script>
+    <script>
+        $('#tgl').datepicker({
+            format: 'yyyy-mm-dd',
+        })
+    </script>
 </body>
 
 </html>

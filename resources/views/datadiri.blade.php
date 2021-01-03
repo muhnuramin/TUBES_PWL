@@ -14,6 +14,8 @@
                         <input name="phone" type="text" class="form-control mt-4" placeholder="No.Telepon" aria-label="First name">
                         <input name="email" type="text" class="form-control mt-4" placeholder="Email" aria-label="First name">
                         <input name="jml_kamar" type="text" class="form-control mt-4" placeholder="Jumlah Kamar" aria-label="First name">
+                        <input name="tgl_pesan" type="date" class="form-control mt-4" placeholder="Check-in" aria-label="First name">
+                        <input name="lama_pesan" type="text" class="form-control mt-4" placeholder="Lama Hari" aria-label="Lama Hari">
                         <input name="type_room" type="text" class="form-control mt-4" disabled value="{{ $rooms->tipe }}">
                         <input name="type_room_hidden" type="hidden" class="form-control mt-4" value="{{ $rooms->tipe }}">
 

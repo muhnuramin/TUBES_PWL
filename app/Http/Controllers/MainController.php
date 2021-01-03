@@ -14,13 +14,13 @@ class MainController extends Controller
         // });
         $rooms = \App\hotels::paginate(4);
         $testimonials = \App\testimonial::all();
-        
+
         return view('home1',[
             'rooms' => $rooms,
             'testimonials' => $testimonials,
         ]);
 
-        
+
     }
     public function about()
     {
@@ -67,6 +67,8 @@ class MainController extends Controller
         $new_data->phone = $request->get('phone');
         $new_data->email = $request->get('email');
         $new_data->jml_kamar = $request->get('jml_kamar');
+        $new_data->tgl_pesan = $request->get('tgl_pesan');
+        $new_data->lama_pesan = $request->get('lama_pesan');
         $new_data->type_room = $room->id;
 
         if (($email_exist) || ($phone_exist)){
