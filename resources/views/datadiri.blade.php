@@ -14,9 +14,10 @@
                         <input name="phone" type="text" class="form-control mt-4" placeholder="No.Telepon" aria-label="First name">
                         <input name="email" type="text" class="form-control mt-4" placeholder="Email" aria-label="First name">
                         <input name="jml_kamar" type="text" class="form-control mt-4" placeholder="Jumlah Kamar" aria-label="First name">
-                        <input name="tgl_pesan" type="date" class="form-control mt-4" placeholder="Check-in" aria-label="First name">
-                        <input name="lama_pesan" type="text" class="form-control mt-4" placeholder="Lama Hari" aria-label="Lama Hari">
                         <input name="type_room" type="text" class="form-control mt-4" disabled value="{{ $rooms->tipe }}">
+                        <br>
+                        <h3><i class="fa fa-calendar"> Tanggal Pemesanan</i></h3>
+                        <input name="tgl_pesan" type="date" class="form-control mt-4" placeholder="Check-in" aria-label="First name">
                         <input name="type_room_hidden" type="hidden" class="form-control mt-4" value="{{ $rooms->tipe }}">
 
                 </div>
@@ -24,9 +25,9 @@
             <div class="col">
                 <div class="form-group  mt-5">
                     <h3><i class="fa fa-university"> Information Bank (Optional)</i></h3>
-                    <input type="text" class="form-control mt-4" placeholder="Nama Bank" aria-label="First name">
-                    <input type="text" class="form-control mt-4" placeholder="No Rekening" aria-label="First name">
-                    <input type="text" class="form-control mt-4" placeholder="Atas nama" aria-label="First name">
+                    <input name="bank" type="text" class="form-control mt-4" placeholder="Nama Bank" aria-label="First name">
+                    <input name="rek" type="text" class="form-control mt-4" placeholder="No Rekening" aria-label="First name">
+                    <input name="atas_nama" type="text" class="form-control mt-4" placeholder="Atas nama" aria-label="First name">
                     {{-- <input type="text" class="form-control mt-4" placeholder="  " aria-label="First name"> --}}
                     <p>NB :Proses pembatalan dan pengembalian pembayaran akan kami lakukan pada nomor rekening yang
                         telah Anda masukkan.</p>

@@ -19,9 +19,8 @@ class MainController extends Controller
             'rooms' => $rooms,
             'testimonials' => $testimonials,
         ]);
-
-
     }
+
     public function about()
     {
         return view('about');
@@ -69,7 +68,11 @@ class MainController extends Controller
         $new_data->jml_kamar = $request->get('jml_kamar');
         $new_data->tgl_pesan = $request->get('tgl_pesan');
         $new_data->lama_pesan = $request->get('lama_pesan');
+        // $new_data->checkin = $request->get('checkin');
         $new_data->type_room = $room->id;
+        $new_data->rek = $request->get('rek');
+        $new_data->bank = $request->get('bank');
+        $new_data->atas_nama = $request->get('atas_nama');
 
         if (($email_exist) || ($phone_exist)){
             return redirect()->route('home')->with(['error'=>'Email / No Telepon sudah digunakan, mohon gunakan email lain.']);

@@ -69,13 +69,14 @@ class ManageController extends Controller
         ]);
         return redirect('/managehotel')->with('status','data berhasil ditambahkan');
     }
+
     public function testicreate(Request $request){
         \App\testimonial::create([
             'Nama' => $request->Nama,
             'Nilai' => $request->Nilai,
             'testi' => $request->testi
             ]);
-            return redirect('/home');
+            return redirect('/');
     }
     public function manageuseredit($id){
         $users = \App\User::find($id);
